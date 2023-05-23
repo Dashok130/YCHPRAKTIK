@@ -13,9 +13,16 @@ namespace Programm.База
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class nameEntities4 : DbContext
+    public partial class UserEntities : DbContext
     {
-        public nameEntities4()
+        private static UserEntities _context;
+        public static UserEntities GetContext()
+        {
+            if (_context == null)
+                _context = new UserEntities();
+            return _context;
+        }
+        public UserEntities()
             : base("name=nameEntities4")
         {
         }
