@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище nameModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ФИО" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="НомерТелефона" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="ДанныеПаспорта" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="ДатаРождения" Type="date" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Организация" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Фото" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersGroupActivity">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ДатаФормирования" Type="date" Nullable="false" />
+          <Property Name="ДатаВыезда" Type="date" Nullable="false" />
+          <Property Name="ДатаОкончания" Type="date" Nullable="false" />
+          <Property Name="Подразделение" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ФИОСотрудника" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Примечание" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Профиль" Type="int" Nullable="false" />
+          <Property Name="Файл" Type="nvarchar" MaxLength="100" />
+          <Property Name="Статус" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ЦельПосещения" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersPrivateActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ДатаФормирования" Type="date" Nullable="false" />
+          <Property Name="ЦельПосещения" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ДатаНачала" Type="date" Nullable="false" />
+          <Property Name="ДатаОкончания" Type="date" Nullable="false" />
+          <Property Name="Подразделение" Type="nvarchar" MaxLength="50" />
+          <Property Name="ФИОСотрудника" Type="nvarchar" MaxLength="50" />
+          <Property Name="Примечание" Type="nchar" MaxLength="10" />
+          <Property Name="Файл" Type="nvarchar" MaxLength="100" />
+          <Property Name="Профиль" Type="int" Nullable="false" />
+          <Property Name="Статус" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Посещение">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ЗаявкаПосещения" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="date" Nullable="false" />
+          <Property Name="ПриходИлиУход" Type="nvarchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Подразделение" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Логин" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Пароль" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="СекретноеСлово" Type="nchar" MaxLength="10" />
+          <Property Name="ПравоДобавления" Type="bit" />
+          <Property Name="ПравоПросмотра" Type="bit" />
+          <Property Name="ПравоОтчётов" Type="bit" />
+          <Property Name="Одобрено" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="Хранилище nameModelContainer">
+          <EntitySet Name="BlackList" EntityType="Self.BlackList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersGroupActivity" EntityType="Self.UsersGroupActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersPrivateActivity" EntityType="Self.UsersPrivateActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Посещение" EntityType="Self.Посещение" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="nameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="IDUser" />
+          </Key>
+          <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="НомерТелефона" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ДанныеПаспорта" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ДатаРождения" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Организация" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Фото" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersGroupActivity">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ДатаФормирования" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ДатаВыезда" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ДатаОкончания" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Подразделение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ФИОСотрудника" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Примечание" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Профиль" Type="Int32" Nullable="false" />
+          <Property Name="Файл" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Статус" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ЦельПосещения" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersPrivateActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ДатаФормирования" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ЦельПосещения" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ДатаНачала" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ДатаОкончания" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Подразделение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ФИОСотрудника" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Примечание" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Файл" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Профиль" Type="Int32" Nullable="false" />
+          <Property Name="Статус" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Посещение">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ЗаявкаПосещения" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ПриходИлиУход" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ФИО" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Подразделение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Логин" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Пароль" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="СекретноеСлово" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ПравоДобавления" Type="Boolean" />
+          <Property Name="ПравоПросмотра" Type="Boolean" />
+          <Property Name="ПравоОтчётов" Type="Boolean" />
+          <Property Name="Одобрено" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="UserEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlackLists" EntityType="Self.BlackList" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UsersGroupActivities" EntityType="Self.UsersGroupActivity" />
+          <EntitySet Name="UsersPrivateActivities" EntityType="Self.UsersPrivateActivity" />
+          <EntitySet Name="Посещение" EntityType="Self.Посещение" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище nameModelContainer" CdmEntityContainer="UserEntities5">
+          <EntitySetMapping Name="BlackLists">
+            <EntityTypeMapping TypeName="nameModel.BlackList">
+              <MappingFragment StoreEntitySet="BlackList">
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="nameModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="НомерТелефона" ColumnName="НомерТелефона" />
+                <ScalarProperty Name="ДанныеПаспорта" ColumnName="ДанныеПаспорта" />
+                <ScalarProperty Name="ДатаРождения" ColumnName="ДатаРождения" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Организация" ColumnName="Организация" />
+                <ScalarProperty Name="Фото" ColumnName="Фото" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersGroupActivities">
+            <EntityTypeMapping TypeName="nameModel.UsersGroupActivity">
+              <MappingFragment StoreEntitySet="UsersGroupActivity">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="ДатаФормирования" ColumnName="ДатаФормирования" />
+                <ScalarProperty Name="ДатаВыезда" ColumnName="ДатаВыезда" />
+                <ScalarProperty Name="ДатаОкончания" ColumnName="ДатаОкончания" />
+                <ScalarProperty Name="Подразделение" ColumnName="Подразделение" />
+                <ScalarProperty Name="ФИОСотрудника" ColumnName="ФИОСотрудника" />
+                <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+                <ScalarProperty Name="Профиль" ColumnName="Профиль" />
+                <ScalarProperty Name="Файл" ColumnName="Файл" />
+                <ScalarProperty Name="Статус" ColumnName="Статус" />
+                <ScalarProperty Name="ЦельПосещения" ColumnName="ЦельПосещения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersPrivateActivities">
+            <EntityTypeMapping TypeName="nameModel.UsersPrivateActivity">
+              <MappingFragment StoreEntitySet="UsersPrivateActivity">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ДатаФормирования" ColumnName="ДатаФормирования" />
+                <ScalarProperty Name="ЦельПосещения" ColumnName="ЦельПосещения" />
+                <ScalarProperty Name="ДатаНачала" ColumnName="ДатаНачала" />
+                <ScalarProperty Name="ДатаОкончания" ColumnName="ДатаОкончания" />
+                <ScalarProperty Name="Подразделение" ColumnName="Подразделение" />
+                <ScalarProperty Name="ФИОСотрудника" ColumnName="ФИОСотрудника" />
+                <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+                <ScalarProperty Name="Файл" ColumnName="Файл" />
+                <ScalarProperty Name="Профиль" ColumnName="Профиль" />
+                <ScalarProperty Name="Статус" ColumnName="Статус" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Посещение">
+            <EntityTypeMapping TypeName="nameModel.Посещение">
+              <MappingFragment StoreEntitySet="Посещение">
+                <ScalarProperty Name="Код" ColumnName="Код" />
+                <ScalarProperty Name="ЗаявкаПосещения" ColumnName="ЗаявкаПосещения" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="ПриходИлиУход" ColumnName="ПриходИлиУход" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сотрудники">
+            <EntityTypeMapping TypeName="nameModel.Сотрудники">
+              <MappingFragment StoreEntitySet="Сотрудники">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Подразделение" ColumnName="Подразделение" />
+                <ScalarProperty Name="Логин" ColumnName="Логин" />
+                <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+                <ScalarProperty Name="СекретноеСлово" ColumnName="СекретноеСлово" />
+                <ScalarProperty Name="ПравоДобавления" ColumnName="ПравоДобавления" />
+                <ScalarProperty Name="ПравоПросмотра" ColumnName="ПравоПросмотра" />
+                <ScalarProperty Name="ПравоОтчётов" ColumnName="ПравоОтчётов" />
+                <ScalarProperty Name="Одобрено" ColumnName="Одобрено" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,36 @@
+﻿<Page x:Class="ПриложениеСотрудников.Страница.СтраницаПодразделений"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ПриложениеСотрудников.Страница"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="СтраницаПодразделений">
+
+    <Grid>
+
+
+
+
+        <DataGrid x:Name="DGridKlient" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,53,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding ФИО}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding НомерТелефона}" Width="*"/>
+                <DataGridTextColumn Header="Паспорт" Binding="{Binding ДанныеПаспорта}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding ДатаРождения}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Почта" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Организация}" Width="*"></DataGridTextColumn>
+
+
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="В чёрный список" Name="BtnEdit" Click="BtnEdit_Click2"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
