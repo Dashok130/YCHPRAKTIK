@@ -5,17 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ПриложениеСотрудников"
         mc:Ignorable="d"
-        Title="Хранитель ПРО" Height="650" Width="800" Icon="/Изображния/User.jpg">
+        Title="Страж - управление безопасностью" Height="650" Width="800" Icon="/Изображния/User.jpg">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="81*"/>
             <RowDefinition Height="353*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="60" Margin="21,23,0,0" VerticalAlignment="Top" Width="71" Source="/Изображния/eople.ico" Grid.RowSpan="2" />
-        <Label Content="Хранитель про&#xD;&#xA;" HorizontalAlignment="Left" Margin="107,27,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Black"/>
-        <Image HorizontalAlignment="Left" Height="55" Margin="702,10,0,0" VerticalAlignment="Top" Width="64" Source="/Изображния/User.jpg" />
+        <Image HorizontalAlignment="Left" Height="85" Margin="21,23,0,0" VerticalAlignment="Top" Width="101" Source="/Изображния/1user.png" />
+        <Label Content="Страж - управление безопасностью&#xD;&#xA;" HorizontalAlignment="Left" Margin="267,0,0,0" VerticalAlignment="Center" FontSize="18" FontFamily="Arial Black" Height="37"/>
+        <Image HorizontalAlignment="Left" Height="102" Margin="654,10,0,0" VerticalAlignment="Top" Width="112" Source="/Изображния/User.jpg" />
         <Frame Name="FrmMain" Grid.Row="1"></Frame>
-        <Label Name="label" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Width="268" Margin="400,39,0,0"/>
-        <Label Content="Выключение в" HorizontalAlignment="Left" Margin="400,39,0,0" VerticalAlignment="Top" Width="147"/>
     </Grid>
 </Window>

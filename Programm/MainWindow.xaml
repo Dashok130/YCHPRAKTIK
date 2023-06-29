@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Programm"
         mc:Ignorable="d"
-        Title="Хранитель ПРО" Height="650" Width="800" Icon="/Изображния/User.jpg">
+        Title="Хранитель PRO" Height="650" Width="800" Icon="/Изображния/User.jpg">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="81*"/>
             <RowDefinition Height="353*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Left" Height="60" Margin="21,23,0,0" VerticalAlignment="Top" Width="71" Source="/Изображния/eople.ico" Grid.RowSpan="2" />
-        <Label Content="Хранитель про&#xD;&#xA;" HorizontalAlignment="Left" Margin="107,27,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Black"/>
-        <Image HorizontalAlignment="Left" Height="55" Margin="702,10,0,0" VerticalAlignment="Top" Width="64" Source="/Изображния/User.jpg" />
+        <Image HorizontalAlignment="Left" Height="89" Margin="21,23,0,0" VerticalAlignment="Top" Width="110" Source="/Изображния/1user.png" />
+        <Label Content="Хранитель - PRO&#xA;" HorizontalAlignment="Left" Margin="454,27,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Black" Height="32"/>
+        <Image HorizontalAlignment="Left" Height="102" Margin="664,10,0,0" VerticalAlignment="Top" Width="102" Source="/Изображния/User.jpg" />
         <Frame Name="FrmMain" Grid.Row="1"></Frame>
     </Grid>
 </Window>

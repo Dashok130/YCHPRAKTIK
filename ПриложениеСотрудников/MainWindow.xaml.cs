@@ -25,15 +25,14 @@ namespace ПриложениеСотрудников
     {
         public MainWindow()
         {
-            int minutes = 5;
-            DateTime tek = DateTime.Now;
+            
             InitializeComponent();
-            таймер.starting(minutes);
+            
             AppConnect.model0db = new UserEntities();
             AppFrame.frameMain = FrmMain;
 
             FrmMain.Navigate(new Авторизация());
-            label.Content = DateTime.Now.AddMinutes(minutes);
+            
         }
     }
 }
